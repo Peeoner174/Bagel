@@ -31,8 +31,9 @@ class BagelDeviceController: NSObject {
         
         for packet in self.packets {
             
-            if packet.packetId == newPacket.packetId {
-                
+
+            if packet.requestInfo == newPacket.requestInfo {
+
                 packet.requestInfo = newPacket.requestInfo
                 return false
             }

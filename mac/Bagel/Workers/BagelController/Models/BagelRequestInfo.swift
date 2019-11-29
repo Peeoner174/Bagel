@@ -17,7 +17,15 @@ enum RequestMethod: String, Codable {
   case head = "HEAD"
 }
 
-class BagelRequestInfo: Codable {
+class BagelRequestInfo: Codable, Equatable {
+    static func == (lhs: BagelRequestInfo, rhs: BagelRequestInfo) -> Bool {
+        if lhs.startDate == rhs.startDate &&
+        lhs.url == rhs.url {
+            return true
+        } else {
+            return false
+        }
+    }
 
     var url: String?
     var requestHeaders: [String: String]?
